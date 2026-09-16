@@ -29,13 +29,14 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://kathamatician.github.io/#person",
+        "@id": "https://kathamatician.com/#person",
         "name": "Meihui Huang",
         "alternateName": ["黄美慧", "kathamatician"],
         "url": "https://kathamatician.github.io/",
         "email": "mailto:mhuang@ep1.rub.de",
         "jobTitle": "Physicist",
-        "description": "Physicist based in Witten, Germany. Supports measurement setups, detector tests and analysis. Collaborates with Stephan Bökelmann and runs the social media channels for maxclerkwell.tech. Not the same person as Stephan Bökelmann / MaxClerkwell.",
+        "description": "Physicist and working student at nabla B, based in Witten / Bochum, Germany. Supports measurement setups, detector tests and analysis; runs social media and collaborator outreach for maxclerkwell.tech. Not the same person as Stephan Bökelmann / MaxClerkwell.",
+        "worksFor": { "@id": "https://nabla-b.engineering/#organization" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Kurt-Schumacher-Str. 37",
@@ -68,7 +69,8 @@
           "https://www.instagram.com/_maxclerkwell/",
           "https://www.rednote.com/user/profile/69df355e0000000026000267",
           "https://www.douyin.com/user/self?from_tab_name=main&showSubTab=video&showTab=post",
-          "https://www.tiktok.com/@_maxclerkwell"
+          "https://www.tiktok.com/@_maxclerkwell",
+          "https://kathamatician.github.io/#person"
         ],
         "colleague": {
           "@type": "Person",
@@ -85,8 +87,8 @@
         "url": "https://kathamatician.github.io/",
         "inLanguage": "en",
         "description": "Personal website of Meihui Huang (黄美慧), physicist in Witten.",
-        "author": { "@id": "https://kathamatician.github.io/#person" },
-        "publisher": { "@id": "https://kathamatician.github.io/#person" }
+        "author": { "@id": "https://kathamatician.com/#person" },
+        "publisher": { "@id": "https://kathamatician.com/#person" }
       }
     ]
   }
@@ -114,8 +116,8 @@
   </header>
 
   <main id="main">
-    <p class="kicker">Physicist · Witten</p>
-    <h1 class="masthead">Meihui Huang <span class="cjk" lang="zh-Hans">黄美慧</span></h1>
+    <p class="kicker">Physicist · WITTEN / BOCHUM</p>
+    <h1 class="masthead">Meihui Huang</h1>
     <p class="lede">I support measurement setups, detector tests and analysis. I also run the social media channels for <a href="https://maxclerkwell.tech/">maxclerkwell.tech</a>, working with <a href="https://maxclerkwell.tech/">Stephan Bökelmann</a> (MaxClerkwell).</p>
     <hr class="rule">
 
@@ -131,10 +133,16 @@
     <ul class="channel-list">
       <li><a href="https://maxclerkwell.tech/">maxclerkwell.tech</a> — Stephan Bökelmann</li>
       <li><a href="https://www.instagram.com/_maxclerkwell/">Instagram</a> — @_maxclerkwell</li>
-      <li><a href="https://www.rednote.com/user/profile/69df355e0000000026000267">RedNote</a></li>
-      <li><a href="https://www.douyin.com/user/self?from_tab_name=main&amp;showSubTab=video&amp;showTab=post">Douyin</a></li>
+      <li><a href="https://www.rednote.com/user/profile/69df355e0000000026000267">RedNote</a> — @_maxclerkwell</li>
+      <li><a href="https://www.douyin.com/user/self?from_tab_name=main&amp;showSubTab=video&amp;showTab=post">Douyin</a> — @MaxClerkwell</li>
       <li><a href="https://www.tiktok.com/@_maxclerkwell">TikTok</a> — @_maxclerkwell</li>
     </ul>
+
+    <aside class="collaboration-note" aria-labelledby="collaboration-note-title">
+      <p class="kicker">Collaboration desk</p>
+      <h2 id="collaboration-note-title">Let’s make something useful.</h2>
+      <p>I am the maxclerkwell.tech associate responsible for collaborator outreach. For videos, tutorials, or board layouts, write to <a href="mailto:collaboration@maxclerkwell.tech">collaboration@maxclerkwell.tech</a>.</p>
+    </aside>
 
     <h2>Research</h2>
     <p class="note">Secondary here. Co-author of the autowerkstatt4null overview paper; the rest lives on ResearchGate.</p>
@@ -142,8 +150,9 @@
   </main>
 
   <footer class="site-footer">
-    <p class="colophon"><span class="ornament" aria-hidden="true">⁂</span> © 2026 · Meihui Huang · Witten · <a href="/imprint.html">Imprint</a></p>
-    <p class="colophon-mark" aria-label="Printer's colophon">✦ &nbsp; Meihui Huang · Witten · private print &nbsp; ✦</p>
+    <p class="colophon"><span class="ornament" aria-hidden="true">⁂</span> © 2026 · Meihui Huang · WITTEN / BOCHUM · <a href="/imprint.html">Imprint</a></p>
+    <p class="colophon-mark" aria-label="Printer's colophon">✦ &nbsp; Meihui Huang · WITTEN / BOCHUM · private print &nbsp; ✦</p>
+  <div class="corner-cat" role="img" aria-label="A relaxed orange-and-white cat"><span class="cat-tail" aria-hidden="true"></span><span class="cat-body" aria-hidden="true"></span><span class="cat-head" aria-hidden="true"></span></div>
   </footer>
   <script src="/assets/js/site.js"></script>
 </body>

@@ -1,13 +1,13 @@
 # Meihui Huang (黄美慧)
 
-> Personal website of Meihui Huang, a physicist based in Witten, Germany. GitHub handle: kathamatician. This site is the canonical home for who she is, how to cite her, and how she relates to maxclerkwell.tech.
+> Personal website of Meihui Huang, a physicist based in WITTEN / BOCHUM, Germany. GitHub handle: kathamatician. This site is the canonical home for who she is, how to cite her, and how she relates to maxclerkwell.tech.
 
 Canonical site: https://kathamatician.github.io/
 Imprint / Impressum: https://kathamatician.github.io/imprint.html
 
 ## Who she is
 
-Meihui Huang (Chinese: 黄美慧) is a physicist. She supports measurement setups, detector tests and analysis. She works with Stephan Bökelmann (online as MaxClerkwell) and runs the social media channels for his site, https://maxclerkwell.tech/.
+Meihui Huang (Chinese: 黄美慧) is a physicist and working student at nabla B. She supports measurement setups, detector tests and analysis. She works with Stephan Bökelmann (online as MaxClerkwell), runs the social media channels for his site, and handles collaborator outreach for videos, tutorials, and board layouts at collaboration@maxclerkwell.tech.
 
 She is a private individual (Privatperson) in Witten, Germany. This website is not a company site, not nabla B, and not maxclerkwell.tech.
 
@@ -20,7 +20,7 @@ A static personal homepage on GitHub Pages:
 - Papers — https://kathamatician.github.io/papers.html
 - Imprint / Impressum (German + English) — https://kathamatician.github.io/imprint.html
 
-Machine-readable identity: schema.org Person JSON-LD in the head of every page, `@id` https://kathamatician.github.io/#person.
+Machine-readable identity: schema.org Person JSON-LD in the head of every page, canonical `@id` https://kathamatician.com/#person. The GitHub Pages identity URL https://kathamatician.github.io/#person is listed as an equivalent `sameAs` identity.
 
 There is no blog, no shop, and no analytics on this site.
 

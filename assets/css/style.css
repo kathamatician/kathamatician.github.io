@@ -62,6 +62,16 @@
   unicode-range: U+6167, U+7F8E, U+9EC4;
 }
 
+/* FZYongLeDDTJF is used when it is installed on the visitor's device.
+   It is proprietary, so it is not bundled without a licensed webfont file. */
+@font-face {
+  font-family: "FZYongLeDDTJF";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: local("FZYongLeDDTJF"), local("FZ YongLe DDTJF");
+}
+
 :root {
   color-scheme: light;
   --page: #f3eee4;
@@ -76,7 +86,7 @@
   --header-bg: #f3eee4;
   --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
   --sans: "Source Sans 3", "IBM Plex Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --cjk: "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
+  --cjk: "FZYongLeDDTJF", "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
 }
 
 [data-theme="dark"] {
@@ -140,7 +150,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  body { animation: none; }
+  body, .corner-cat, .cat-tail { animation: none; }
 }
 
 :focus-visible {
@@ -298,6 +308,7 @@ main {
   width: min(40rem, calc(100% - 3rem));
   margin: 0 auto;
   padding: 3.25rem 0 4rem;
+  position: relative;
 }
 
 main.wide {
@@ -399,6 +410,31 @@ h3 {
 .channel-list li:first-child,
 .profile-list li:first-child {
   border-top: 1px solid var(--rule);
+}
+
+.collaboration-note {
+  margin: 2.2rem 0;
+  padding: 1rem 1.1rem;
+  border-top: 3px double var(--rule-strong);
+  border-bottom: 3px double var(--rule-strong);
+  color: var(--ink-muted);
+}
+
+.collaboration-note h2 {
+  margin: 0 0 .45rem;
+  font-size: 1rem;
+}
+
+.collaboration-note p:last-child { margin-bottom: 0; }
+
+@media (min-width: 75rem) {
+  .collaboration-note {
+    position: absolute;
+    top: 3.25rem;
+    left: calc(100% + 3rem);
+    width: 15rem;
+    margin: 0;
+  }
 }
 
 .note {
@@ -519,6 +555,7 @@ h3 {
 
 .site-footer {
   border-top: 1px solid var(--rule);
+  padding-bottom: 3rem;
 }
 
 .colophon {
@@ -542,6 +579,47 @@ h3 {
   text-align: center;
   text-transform: uppercase;
 }
+
+.corner-cat {
+  position: fixed;
+  right: max(.9rem, env(safe-area-inset-right));
+  bottom: max(.8rem, env(safe-area-inset-bottom));
+  z-index: 10;
+  width: 4.2rem;
+  height: 2.7rem;
+  pointer-events: none;
+  opacity: .92;
+  animation: cat-breathe 4.8s ease-in-out infinite;
+}
+
+.cat-body, .cat-head, .cat-tail { position: absolute; display: block; }
+.cat-body {
+  right: .2rem; bottom: .12rem; width: 3.1rem; height: 1.55rem;
+  border: 1px solid #9a5129; border-radius: 52% 55% 42% 44%;
+  background: linear-gradient(90deg, #f1a15d 0 37%, #fff3dc 37% 67%, #dd7b3e 67%);
+}
+.cat-head {
+  right: .15rem; top: .25rem; width: 1.55rem; height: 1.3rem;
+  border: 1px solid #9a5129; border-radius: 50% 50% 45% 45%;
+  background-color: #fff3dc;
+  background-image: radial-gradient(circle at 35% 57%, #4d2d20 0 .07rem, transparent .09rem), radial-gradient(circle at 69% 57%, #4d2d20 0 .07rem, transparent .09rem);
+}
+.cat-head::before, .cat-head::after {
+  content: ""; position: absolute; top: -.34rem; width: .57rem; height: .62rem;
+  border: 1px solid #9a5129; border-bottom: 0; background: #e98b4b;
+}
+.cat-head::before { left: .05rem; transform: rotate(-24deg); }
+.cat-head::after { right: .05rem; transform: rotate(24deg); }
+.cat-tail {
+  left: .1rem; bottom: .42rem; width: 1.8rem; height: .72rem;
+  border: .45rem solid #e88b4b; border-right: 0; border-radius: 1rem 0 0 1rem;
+  transform-origin: right center; animation: cat-tail 3.7s ease-in-out infinite;
+}
+
+@keyframes cat-breathe { 50% { transform: translateY(-.12rem); } }
+@keyframes cat-tail { 50% { transform: rotate(12deg); } }
+
+@media (max-width: 32rem) { .corner-cat { transform: scale(.82); transform-origin: bottom right; } }
 
 .colophon .ornament {
   color: var(--oxblood);
