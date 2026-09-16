@@ -1,0 +1,576 @@
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/source-serif-4-latin-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Chomsky by Fredrick Brennan, distributed under SIL Open Font License 1.1.
+   License copy: /assets/fonts/CHOMSKY-OFL-1.1.txt */
+@font-face {
+  font-family: "Chomsky";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/chomsky.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/source-serif-4-latin-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/source-sans-3-latin-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/source-sans-3-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/source-sans-3-latin-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/noto-serif-sc-name.ttf") format("truetype");
+  unicode-range: U+6167, U+7F8E, U+9EC4;
+}
+
+:root {
+  color-scheme: light;
+  --page: #f3eee4;
+  --ink: #1b1613;
+  --ink-muted: #5a524b;
+  --oxblood: #7a2d33;
+  --oxblood-hover: #5c2227;
+  --rule: color-mix(in srgb, var(--ink) 22%, var(--page));
+  --rule-strong: color-mix(in srgb, var(--ink) 38%, var(--page));
+  --slot: color-mix(in srgb, var(--ink) 7%, var(--page));
+  --focus: var(--oxblood);
+  --header-bg: #f3eee4;
+  --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --sans: "Source Sans 3", "IBM Plex Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --cjk: "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #16110e;
+  --ink: #f1e7d8;
+  --ink-muted: #c4b6a6;
+  --oxblood: #d36b73;
+  --oxblood-hover: #e59aa0;
+  --rule: color-mix(in srgb, var(--ink) 18%, var(--page));
+  --rule-strong: color-mix(in srgb, var(--ink) 32%, var(--page));
+  --slot: color-mix(in srgb, var(--ink) 8%, var(--page));
+  --header-bg: #16110e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #16110e;
+    --ink: #f1e7d8;
+    --ink-muted: #c4b6a6;
+    --oxblood: #d36b73;
+    --oxblood-hover: #e59aa0;
+    --rule: color-mix(in srgb, var(--ink) 18%, var(--page));
+    --rule-strong: color-mix(in srgb, var(--ink) 32%, var(--page));
+    --slot: color-mix(in srgb, var(--ink) 8%, var(--page));
+    --header-bg: #16110e;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 112.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  background: var(--page);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  animation: enter 0.55s ease;
+}
+
+@keyframes enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body { animation: none; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3.5rem;
+  z-index: 40;
+  padding: 0.4rem 0.7rem;
+  background: var(--page);
+  color: var(--oxblood);
+  border: 1px solid var(--oxblood);
+  font-size: 0.85rem;
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--rule);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.7rem 1.5rem;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem 0.7rem;
+}
+
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem 0.85rem;
+  min-width: min(100%, 14rem);
+}
+
+.site-title { color: var(--ink); text-decoration: none; }
+
+.site-title:hover {
+  color: var(--oxblood);
+}
+
+.cjk {
+  font-family: var(--cjk);
+  font-weight: 600;
+}
+
+.brand .cjk {
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--ink-muted);
+}
+
+.masthead {
+  margin-bottom: 1.15rem;
+  font-family: "Chomsky", "Old English Text MT", "UnifrakturCook", Georgia, serif;
+  font-size: clamp(2.75rem, 9vw, 5.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: .98;
+  color: var(--oxblood);
+  white-space: nowrap;
+}
+
+.masthead .cjk {
+  display: inline-block;
+  margin-left: .22em;
+  color: var(--ink);
+  font-size: .62em;
+  font-family: var(--cjk);
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 32rem) {
+  .masthead { white-space: normal; }
+  .masthead .cjk { display: block; margin: .16em 0 0; }
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.15rem;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 0.15rem 0.35rem;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--oxblood);
+  box-shadow: inset 0 -1px 0 var(--oxblood);
+}
+
+.site-nav a:hover {
+  color: var(--oxblood);
+}
+
+.nav-sep {
+  color: var(--oxblood);
+  font-size: 0.75rem;
+  user-select: none;
+  padding: 0 0.1rem;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  font-family: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 0.15rem 0;
+}
+
+.theme-toggle:hover {
+  color: var(--oxblood);
+}
+
+main {
+  flex: 1;
+  width: min(40rem, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 3.25rem 0 4rem;
+}
+
+main.wide {
+  width: min(46rem, calc(100% - 3rem));
+}
+
+.kicker {
+  margin: 0 0 0.85rem;
+  color: var(--oxblood);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(2.05rem, 4.5vw, 2.7rem);
+}
+
+h1 .cjk {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+}
+
+.lede {
+  margin: 1.15rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  max-width: 38rem;
+}
+
+p,
+li {
+  max-width: 38rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--oxblood);
+  text-underline-offset: 0.14em;
+}
+
+a:hover {
+  color: var(--oxblood-hover);
+}
+
+.rule {
+  display: block;
+  width: 3.25rem;
+  height: 1px;
+  margin: 1.75rem 0 1.6rem;
+  background: var(--oxblood);
+  border: 0;
+}
+
+h2 {
+  margin: 2.35rem 0 0.7rem;
+  font-size: 1.35rem;
+}
+
+h3 {
+  margin: 1.6rem 0 0.45rem;
+  font-size: 1.08rem;
+}
+
+.plain-list,
+.channel-list,
+.profile-list {
+  margin: 0 0 1.1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.plain-list li,
+.channel-list li,
+.profile-list li {
+  margin: 0;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.plain-list li:first-child,
+.channel-list li:first-child,
+.profile-list li:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+.note {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.about-layout {
+  display: grid;
+  gap: 1.75rem 2rem;
+}
+
+@media (min-width: 44rem) {
+  .about-layout {
+    grid-template-columns: 13.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.portrait {
+  margin: 0;
+}
+
+.portrait-photo,
+.portrait-slot {
+  display: block;
+  width: 100%;
+  max-width: 13.5rem;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: var(--slot);
+  border: 1px solid var(--rule-strong);
+}
+
+.portrait-slot {
+  display: grid;
+  place-items: center;
+}
+
+.portrait-slot::after {
+  content: "X";
+  color: var(--oxblood);
+  font-size: 1.15rem;
+}
+
+.portrait figcaption {
+  margin-top: 0.45rem;
+  max-width: 13.5rem;
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.biblio {
+  margin: 0;
+  padding: 1.1rem 0 1.2rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.biblio .title {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  margin: 0 0 0.55rem;
+}
+
+.biblio .authors {
+  margin: 0 0 0.45rem;
+}
+
+.biblio .self {
+  font-weight: 600;
+}
+
+.biblio .meta {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.biblio .links {
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.85rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.imprint-block {
+  margin-bottom: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.imprint-block:last-of-type {
+  border-bottom: 0;
+}
+
+.imprint-block h2 {
+  margin-top: 0;
+}
+
+.imprint-block address {
+  font-style: normal;
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+}
+
+.colophon {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem 1.4rem;
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.colophon-mark {
+  width: min(100% - 3rem, 68rem);
+  margin: 0 auto 1.25rem;
+  padding: .35rem .7rem;
+  border-top: 3px double var(--rule-strong);
+  border-bottom: 3px double var(--rule-strong);
+  color: var(--ink-muted);
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.colophon .ornament {
+  color: var(--oxblood);
+  padding: 0 0.35rem;
+}
+
+.colophon a {
+  color: inherit;
+}
+
+.colophon a:hover {
+  color: var(--oxblood);
+}
+
+@media print {
+  .skip,
+  .site-nav,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  .site-header,
+  .site-footer,
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  a {
+    color: inherit;
+  }
+}
