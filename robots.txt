@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kathamatician.github.io/sitemap.xml
-# Identity for language models: https://kathamatician.github.io/llms.txt
+Sitemap: https://kathamatician.com/sitemap.xml
+# Identity for language models: https://kathamatician.com/llms.txt

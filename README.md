@@ -2,7 +2,7 @@
 
 Personal site of **Meihui Huang** (黄美慧). Static HTML for GitHub Pages.
 
-Live URL: <https://kathamatician.github.io/>
+Live URL: <https://kathamatician.com/> (also <https://kathamatician.github.io/>)
 
 ## Pages
 
